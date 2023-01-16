@@ -15,20 +15,19 @@ class MainActivity2 : AppCompatActivity() {
         // Recoge el Intent que ha iniciado la actividad
         val intent = getIntent()
 
-        // Recoge el valor de tipo String pasado en el Intent
-        val value = intent.getIntExtra("proveedores",0)
+        // Recoge el valor de tipo int pasado en el Intent
+        val numero1 = intent.getIntExtra("numero1", 0)
+        val numero2 = intent.getIntExtra("numero2", 0)
 
-        val nroClientes = findViewById<TextView>(R.id.textView2)
+        var resultado = numero1 + numero2
 
-        nroClientes.text = value.toString()
-
-
-        intent.putExtra("saludo", "Hola");
+        intent.putExtra("suma", resultado.toString());
         Log.d("MENSAJES", "actualizado intent")
 
         setResult(Activity.RESULT_OK, intent);
         Log.d("MENSAJES", "actualizado resultado")
 
+        // Cierro la activity
         finish()
 
 
