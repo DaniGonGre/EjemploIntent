@@ -2,6 +2,7 @@ package com.example.intentkotlin
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             // Crea un Intent para iniciar la segunda actividad
             val intent = Intent(this, MainActivity2::class.java)
 
+            val navegador = Intent(Intent.ACTION_VIEW)
+            val url = "http://www.google.com"
+            navegador.data = Uri.parse(url)
+            startActivity(navegador)
+/*
             // Añade números al Intent
             intent.putExtra("numero1", 3)
             intent.putExtra("numero2", 2)
@@ -42,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("numero2", 8)
 
             // Inicia la tercera actividad
-            startActivityForResult(intent, RESULTADO_TRES)
+            startActivityForResult(intent, RESULTADO_TRES)*/
 
         }
 
